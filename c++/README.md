@@ -34,8 +34,8 @@ std::endl - \n
 ```C++
 std::cout << "Hello World!" << std::endl;
 ```
-std::cin - characters input
-\>\> - stream extraction
+std::cin - characters input  
+\>\> - stream extraction  
 ```C++
 str input;
 std::cin >> input;
