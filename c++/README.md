@@ -8,6 +8,8 @@
 ---
 Tutorials  
 [Tech with Tim](https://www.youtube.com/playlist?list=PLzMcBGfZo4-lmGC8VW0iu6qfMHjy7gLQ3) - 4  
+[Caleb Curry - All-in-One](https://www.youtube.com/playlist?list=PL_c9BZzLwBRJ55lLw8PdPlTVblIlPKfX5)
+[Caleb Curry - Intermediate](https://www.youtube.com/playlist?list=PL_c9BZzLwBRJkVDaJbLHrrjNH_phcbCy7)
 
 ### Include
 ---
@@ -33,7 +35,7 @@ std::endl - \n
 std::cout << "Hello World!" << std::endl;
 ```
 std::cin - characters input
->> - stream extraction
+\>\> - stream extraction
 ```C++
 str input;
 std::cin >> input;
