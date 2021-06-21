@@ -7,7 +7,7 @@
 ### Resources
 ---
 Tutorials  
-[Tech with Tim](https://www.youtube.com/playlist?list=PLzMcBGfZo4-lmGC8VW0iu6qfMHjy7gLQ3) - 4  
+[Tech with Tim](https://www.youtube.com/playlist?list=PLzMcBGfZo4-lmGC8VW0iu6qfMHjy7gLQ3) - 7  
 [Caleb Curry - All-in-One](https://www.youtube.com/playlist?list=PL_c9BZzLwBRJ55lLw8PdPlTVblIlPKfX5)
 [Caleb Curry - Intermediate](https://www.youtube.com/playlist?list=PL_c9BZzLwBRJkVDaJbLHrrjNH_phcbCy7)
 
@@ -90,4 +90,22 @@ If you access an element that has not been set, it will return whatever is store
   int x [5] = {5} // Declare an array with size 5 and value 5 to the first element and 0 to rest of the elements
   
   sizeof(x) // Get the size of the array
+```
+
+### For Loop / While Loop
+---
+```C++
+// for loop condition
+for (init; condition; change (increment/decrement) {
+}
+
+// foreach loop
+for (int x : int [3] = {1, 2, 3}) {
+}
+
+// while loop
+init
+while (condition) {
+  change (increment/decrement)
+}
 ```
