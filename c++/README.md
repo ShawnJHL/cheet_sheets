@@ -109,3 +109,21 @@ while (condition) {
   change (increment/decrement)
 }
 ```
+
+### Switch
+---
+```C++
+char x = 'x';
+switch (x) {
+  case 'a':
+    std::cout << "a" << std::endl;
+    break;
+  case 'x':
+    std::out << "x" << std::endl;
+    break;
+  default:
+    std::out << "not found" << std::endl;
+    break;
+}
+```
+If break caluse does not exist for a case statement, the program will continue to check the next case(s)  
