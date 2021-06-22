@@ -7,7 +7,7 @@
 ### Resources
 ---
 Tutorials  
-[Tech with Tim](https://www.youtube.com/playlist?list=PLzMcBGfZo4-lmGC8VW0iu6qfMHjy7gLQ3) - 7  
+[Tech with Tim](https://www.youtube.com/playlist?list=PLzMcBGfZo4-lmGC8VW0iu6qfMHjy7gLQ3) - 15  
 [Caleb Curry - All-in-One](https://www.youtube.com/playlist?list=PL_c9BZzLwBRJ55lLw8PdPlTVblIlPKfX5)
 [Caleb Curry - Intermediate](https://www.youtube.com/playlist?list=PL_c9BZzLwBRJkVDaJbLHrrjNH_phcbCy7)
 
@@ -127,3 +127,52 @@ switch (x) {
 }
 ```
 If break caluse does not exist for a case statement, the program will continue to check the next case(s)  
+
+### String
+---
+String can be think of as an array with characters
+```C++
+#include <string>
+
+char str[] = "HELLO WORLD";
+// Preferred, managed type
+string str = "HELLO WORLD"; // double quotes
+str [1] = 'e'; // single quote
+```
+Useful features
+```C++
+str.length ();
+str.size ();
+```
+
+### &Reference
+---
+& references to a memory location
+```C++
+int a = 5;
+int& b = a;
+
+b = 1; // a becomes 1
+```
+You must initialize a reference variable with a variable
+
+### *Pointer
+---
+* points to a memory location (pointer variable has its <b>own memory location</b> and it points to memory location)
+```C++
+int a = 5;
+int* b = &a;
+
+*b = 1; // a becomes 1
+```
+You must deference a pointer variable to set new value as it must know the memeory location it is changing to
+```C++
+int a[] = {1, 2, 3};
+int head = a;
+
+for (int i = 0; i < 3; ++i) {
+  head = a + i // from memory location of the first element of a, add i to get memory location of ith element
+  cout << *head << endl;
+}
+```
+Elements within the same array will have memory address of + 1 from previous
