@@ -158,7 +158,7 @@ You must initialize a reference variable with a variable
 
 ### *Pointer
 ---
-* points to a memory location (pointer variable has its <b>own memory location</b> and it points to memory location)
+\* points to a memory location (pointer variable has its <b>own memory location</b> and it points to memory location)
 ```C++
 int a = 5;
 int* b = &a;
@@ -176,3 +176,53 @@ for (int i = 0; i < 3; ++i) {
 }
 ```
 Elements within the same array will have memory address of + 1 from previous
+
+### Tuple
+---
+```C++
+include <tuple>
+
+tuple <string, int> person1 ("Shawn", 30);
+tuple <string, int> person2 = make_tuple ("Shawn2", 30);
+int index = 0;
+
+get<index>person1 // get or assign value on index
+
+person1.sawp (person2) // sawp two tuples
+
+string name;
+int age;
+tie (name, age) = person1; // break down into individual elements
+tuple <string, int, string, int> people = tuple_cat (person1, person2); // concatenate tuples
+```
+
+### Maps
+---
+```C++
+map <char, int> mp = {
+  {'S', 1},
+  {'h', 2}
+  };
+  
+mp ['h']; // 2
+mp ['x']; // 0 not error
+
+mp.insert (pair<char, int>('a', 3)); // insert
+mp.erase ('a'); // erase
+mp.clear (); // empty the map
+mp.empty (); // check if empty
+mp.size (); // size of map
+
+for (map<char,int>::iterator itr = mp.begin (); itr != mp.end (); ++itr) {
+  *itr.first; // key
+  itr->first; // -> is equivalent to deferencing the variable 
+  *itr.second; // value
+  itr->second;
+  
+  if (mp.find ('w') == mp.end()) { // check if w is in the map, if not exist, initialize it
+    mp ['w'] = 0;
+  }
+  
+  mp ['w']++;
+}
+```
