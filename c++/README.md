@@ -204,14 +204,8 @@ map <char, int> mp = {
   {'h', 2}
   };
   
-mp ['h']; // 2
-mp ['x']; // 0 not error
-
-mp.insert (pair<char, int>('a', 3)); // insert
-mp.erase ('a'); // erase
-mp.clear (); // empty the map
-mp.empty (); // check if empty
-mp.size (); // size of map
+mp ['h']; // returns value 2
+mp ['x']; // returns 0 not error
 
 for (map<char,int>::iterator itr = mp.begin (); itr != mp.end (); ++itr) {
   *itr.first; // key
@@ -225,4 +219,10 @@ for (map<char,int>::iterator itr = mp.begin (); itr != mp.end (); ++itr) {
   
   mp ['w']++;
 }
+
+mp.insert (pair<char, int>('a', 3)); // insert
+mp.erase ('a'); // erase
+mp.clear (); // empty the map
+mp.empty (); // check if empty
+mp.size (); // size of map
 ```
