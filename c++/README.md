@@ -66,7 +66,8 @@ Multi line comment
 ---
 Memory location where value never changes
 ```C++
-const int gravity = -9.8;
+const int gravity = -9.8; // Can be deferred until run time
+constexpr int gravity = -9.8 // Initialized at compile time. Can be used on class and function
 ```
 Value must be initialized
 
@@ -79,17 +80,19 @@ Operands - expressions or values an operator operates
 ---
 Array has static size
 ```C++
-  int x [5]; // Declare an array with size 5
-  int y [5] = {1, 2, 3, 4, 5}; // Declare an array with size 5 and values
-  int yy [] = {1, 2, 3, 4, 5}; // C++ will automatically set size to the number of values
-  int yyy [] {1, 2, 3, 4, 5}; // Same as above
-```
-If you print an array, it will print memory location of the array not the values  
-If you access an element that has not been set, it will return whatever is stored (random) at that memory location  
-```C++
-  int x [5] = {5} // Declare an array with size 5 and value 5 to the first element and 0 to rest of the elements
-  
-  sizeof(x) // Get the size of the array
+int x [5]; // Declare an empty array with size 5
+int x [5] = {1, 2, 3, 4, 5}; // Declare an array with size 5 and values
+int x [] = {1, 2, 3, 4, 5}; // C++ will automatically set size to the number of values
+int x [] {1, 2, 3, 4, 5}; // Same as above
+
+// If you access an element that has not been initialized, it will return whatever is stored (random) at that memory location  
+int x [5] = {2} // Declare an array with size 5 and value 2 to the first element and 0 to rest of the elements
+
+x.begin (); / x.end ();
+x.rebegin (); / x.rend ();
+x.size ();
+x.max_size ();
+x.empty ();
 ```
 
 ### For Loop / While Loop
@@ -130,7 +133,6 @@ If break caluse does not exist for a case statement, the program will continue t
 
 ### String
 ---
-String can be think of as an array with characters
 ```C++
 #include <string>
 
@@ -138,9 +140,7 @@ char str[] = "HELLO WORLD";
 // Preferred, managed type
 string str = "HELLO WORLD"; // double quotes
 str [1] = 'e'; // single quote
-```
-Useful features
-```C++
+
 str.length ();
 str.size ();
 ```
@@ -177,15 +177,27 @@ for (int i = 0; i < 3; ++i) {
 ```
 Elements within the same array will have memory address of + 1 from previous
 
+### Pair
+---
+```C++
+pair<int, int> g1 = {1, 2};
+g1 = make_pair (1, 2);
+g1.first = 100;
+
+g1.first;
+g1.second;
+```
+
 ### Tuple
 ---
+Tuple can hold multiple data types
 ```C++
 include <tuple>
 
 tuple <string, int> person1 ("Shawn", 30);
 tuple <string, int> person2 = make_tuple ("Shawn2", 30);
-int index = 0;
 
+int index = 0;
 get<index>person1 // get or assign value on index
 
 person1.sawp (person2) // sawp two tuples
@@ -196,7 +208,7 @@ tie (name, age) = person1; // break down into individual elements
 tuple <string, int, string, int> people = tuple_cat (person1, person2); // concatenate tuples
 ```
 
-### Maps
+### Map
 ---
 ```C++
 map <char, int> mp = {
@@ -225,4 +237,43 @@ mp.erase ('a'); // erase
 mp.clear (); // empty the map
 mp.empty (); // check if empty
 mp.size (); // size of map
+```
+
+### Vector
+---
+Vector has dynamic size
+```C++
+#include <vector>
+
+vector <int> v1 = {1, 2, 3};
+
+v1.front (); // value at 0
+v1.end (); // value at end
+v1.begin (); // iterator pointing at 0
+v1.last (); // iterator pointing at the last
+v1.size ();
+v1.push_back ();
+v1.pop_back ();
+v1.insert (pointer to the index, value); // ex. pointer = v1.begin()
+v1.erase (pointer to the index); // ex. pointer = v1.beging() + 1
+
+v1.capacity (); // current size which is not the number of elements
+v1.shrink_to_fit (); // shink size to match the max of current elements vs min capacity
+```
+
+### Set
+---
+```C++
+#include <set>
+
+set <char> s1 = {'C', 'D'};
+
+if (s1.find ('C') != s1.end()) {
+  cout << "Not Found C";
+} else {
+  cout << "Found C" << endl;
+}
+
+s1.insert ('B');
+s1.erase ('C');
 ```
