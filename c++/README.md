@@ -247,15 +247,19 @@ Vector has dynamic size
 
 vector <int> v1 = {1, 2, 3};
 
-v1.front (); // value at 0
-v1.end (); // value at end
+v1.sort (v1.begin(), v1.end());
+v1.max_element (v1.being, v1.end());
 v1.begin (); // iterator pointing at 0
+v1.end (); // value at end
+v1.front (); // value of the first element
+v1.back (); // value of the last element
 v1.last (); // iterator pointing at the last
 v1.size ();
 v1.push_back ();
 v1.pop_back ();
 v1.insert (pointer to the index, value); // ex. pointer = v1.begin()
 v1.erase (pointer to the index); // ex. pointer = v1.beging() + 1
+
 
 v1.capacity (); // current size which is not the number of elements
 v1.shrink_to_fit (); // shink size to match the max of current elements vs min capacity
@@ -276,4 +280,17 @@ if (s1.find ('C') != s1.end()) {
 
 s1.insert ('B');
 s1.erase ('C');
+```
+
+### Lambda
+---
+[capture caluse](parameters){body}
+```
+[](int x){return x + 1}(5); // inline lambda execution notice ()
+
+auto lam = [](int x){std::cout << "Hi and " << x << std::endl;};
+
+function<void(int)> lam = [](int x){std::cout << "Hi and " << x << std::endl;};
+
+lam(1);
 ```
